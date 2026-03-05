@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cpu-dispatch-tester"
+version = "1.0.0"
+description = "CPU Dispatch Algorithm Tester - Test and compare various CPU scheduling algorithms"
+readme = "README.md"
+requires-python = ">=3.6"
+license = {text = "MIT"}
+authors = [{name = "Juan Lozano"}]
+
+keywords = ["scheduling", "algorithms", "FIFO", "SJF", "CPU", "dispatch"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Education",
+    "Topic :: System :: Operating System",
+]
+
+# No external dependencies required
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    # Add development tools here if needed later
+    # "pytest>=7.0",
+    # "black>=22.0",
+    # "flake8>=4.0",
+]
+
+test = [
+    # Testing dependencies (currently not needed)
+    # "pytest>=7.0",
+    # "pytest-cov>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/script_various_dispatch_python"
+Documentation = "https://github.com/yourusername/script_various_dispatch_python#readme"
+Repository = "https://github.com/yourusername/script_various_dispatch_python.git"
+Issues = "https://github.com/yourusername/script_various_dispatch_python/issues"
+
+[tool.setuptools]
+packages = ["src", "src.disp_algorithms"]
+
+[tool.black]
+line-length = 88
+target-version = ['py36']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
